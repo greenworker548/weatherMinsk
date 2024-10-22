@@ -1,0 +1,87 @@
+/* .agdasima-regular {
+    font-family: "Agdasima", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+  
+.agdasima-bold {
+    font-family: "Agdasima", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+} */
+  
+/* current card */
+.current-card {
+    max-width: 500px;
+    /* height: 100vh; */
+    margin: 0 auto 5px auto;
+    padding: 20px 0px 40px 0px;
+
+    /* background-color: darkcyan; */
+    background: linear-gradient(to bottom, #88C198, #1F83A3);
+    border-radius: 10px;
+}
+
+.card__city-name {
+    margin: 0px auto 40px auto;
+
+    font-family: "Agdasima", sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    text-align: center;
+    color: azure;
+}
+
+.card__current-indicators {
+    
+}
+
+.current-indicators__temp {
+    margin: 0px auto 10px auto;
+
+    font-family: "Agdasima", sans-serif;
+    font-weight: 700;
+    font-size: 100px;
+    text-align: center;
+    color: azure;
+}
+
+.indicators__temp__unit {
+    font-weight: 400;
+    font-size: 40px;
+}
+
+.current-indicators__condition {
+    margin: 0px auto 10px auto;
+
+    font-family: "Agdasima", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    text-align: center;
+    color: azure;
+}
+
+.current-indicators__icon {
+
+}
+
+.icon__image {
+    display: block;
+    width: 120px;
+    margin: 0 auto;
+}
+
+
+/* future card */
+.future-card {
+    display: flex;
+    justify-content: space-between;
+    max-width: 500px;
+    height: 200px;
+    margin: 0 auto;
+    padding: 20px 0px 40px 0px;
+
+    /* background-color: darkcyan; */
+    background: linear-gradient(to bottom, #1F83A3, #88C198);
+    border-radius: 10px;
+}
