@@ -1,23 +1,9 @@
-/* .agdasima-regular {
-    font-family: "Agdasima", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
-  
-.agdasima-bold {
-    font-family: "Agdasima", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-} */
-  
 /* current card */
 .current-card {
     max-width: 500px;
-    /* height: 100vh; */
     margin: 0 auto 5px auto;
     padding: 20px 0px 40px 0px;
 
-    /* background-color: darkcyan; */
     background: linear-gradient(to bottom, #88C198, #1F83A3);
     border-radius: 10px;
 }
@@ -33,12 +19,21 @@
 }
 
 .card__current-indicators {
-    
+    margin: 0px auto;
+
+    display: flex;
+    justify-content: space-around;
+}
+
+.current-indicators__humidity {
+    font-family: "Agdasima", sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+    text-align: center;
+    color: azure;
 }
 
 .current-indicators__temp {
-    margin: 0px auto 10px auto;
-
     font-family: "Agdasima", sans-serif;
     font-weight: 700;
     font-size: 100px;
@@ -46,12 +41,30 @@
     color: azure;
 }
 
-.indicators__temp__unit {
+.current-indicators__feeling {
+    font-family: "Agdasima", sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+    text-align: center;
+    color: azure;
+}
+
+.temp__variety {
     font-weight: 400;
     font-size: 40px;
 }
 
-.current-indicators__condition {
+.card__wind-speed {
+    margin: 0px auto 10px auto;
+
+    font-family: "Agdasima", sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    text-align: center;
+    color: azure;
+}
+
+.card__condition {
     margin: 0px auto 10px auto;
 
     font-family: "Agdasima", sans-serif;
@@ -61,27 +74,59 @@
     color: azure;
 }
 
-.current-indicators__icon {
-
-}
-
 .icon__image {
     display: block;
     width: 120px;
     margin: 0 auto;
 }
 
-
 /* future card */
 .future-card {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     max-width: 500px;
     height: 200px;
     margin: 0 auto;
-    padding: 20px 0px 40px 0px;
+    padding: 20px 0px 20px 0px;
 
-    /* background-color: darkcyan; */
     background: linear-gradient(to bottom, #1F83A3, #88C198);
     border-radius: 10px;
+}
+
+.item__temp {
+    margin: 0px 0px 10px 0px;
+
+    font-family: "Agdasima", sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    text-align: center;
+    color: azure;
+}
+
+.item__icon {
+    margin: 0px 0px 10px 0px;
+}
+
+.item__image {
+    display: block;
+    width: 40px;
+    margin: 0 auto;
+}
+
+.item__wind-speed {
+    margin: 0px 0px 20px 0px;
+
+    font-family: "Agdasima", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    text-align: center;
+    color: azure;
+}
+
+.item__time {
+    font-family: "Agdasima", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    text-align: center;
+    color: azure;
 }
