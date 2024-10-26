@@ -1,3 +1,11 @@
+.body {
+    display: none;
+}
+
+.body.on {
+    display: block;
+}
+
 /* current card */
 .current-card {
     max-width: 500px;
