@@ -1,10 +1,10 @@
-.body {
+/* .body {
     display: none;
 }
 
 .body.on {
     display: block;
-}
+} */
 
 /* current card */
 .current-card {
@@ -89,7 +89,7 @@
 }
 
 /* future card */
-.future-card {
+.future-hour-card {
     display: flex;
     justify-content: space-around;
     max-width: 500px;
@@ -99,6 +99,12 @@
 
     background: linear-gradient(to bottom, #1F83A3, #88C198);
     border-radius: 10px;
+
+    overflow: scroll;
+}
+
+.future-hour-card::-webkit-scrollbar {
+    display: none; /* Chrome, Safari и Opera */
 }
 
 .item__temp {
