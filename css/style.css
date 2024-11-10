@@ -99,12 +99,6 @@
 
     background: linear-gradient(to bottom, #1F83A3, #88C198);
     border-radius: 10px;
-
-    overflow: scroll;
-}
-
-.future-hour-card::-webkit-scrollbar {
-    display: none; /* Chrome, Safari и Opera */
 }
 
 .item__temp {

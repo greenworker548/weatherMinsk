@@ -35,7 +35,18 @@ function renderFutureCard(knot, data = {}) {
 function renderFutureHourSection(data) {
     const arrHourData = data.forecast.forecastday[0].hour
 
-    arrHourData.forEach((item) => {
+    const currentTime = new Date().getHours()
+    console.log(currentTime)
+
+    // const sliceHourData = arrHourData.slice(currentTime, currentTime + 4)
+
+    // arrHourData.forEach((item) => {
+    //     renderFutureCard(templateCardKnot, item)
+    // })
+
+    const sliceHourData = arrHourData.slice(0, 4)
+
+    sliceHourData.forEach((item) => {
         renderFutureCard(templateCardKnot, item)
     })
 }
