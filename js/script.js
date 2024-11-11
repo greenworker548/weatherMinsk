@@ -1,3 +1,6 @@
+// API url
+const urlAPI = "http://api.weatherapi.com/v1/forecast.json?key=10677ee246284bbbac4180434242110&q=Minsk&days=5&lang=en"
+
 // current-card
 const currentHumidityKnot = document.querySelector(".current-indicators__humidity")
 const currentTempKnot = document.querySelector(".current-indicators__temp")
@@ -11,9 +14,6 @@ const futureHourSectionKnot = document.querySelector(".future-hour-card")
 
 // template-card
 const templateCardKnot = document.querySelector(".template__card")
-
-// API url
-const urlAPI = "http://api.weatherapi.com/v1/forecast.json?key=10677ee246284bbbac4180434242110&q=Minsk&days=5&lang=en"
 
 function renderFutureCard(knot, data = {}) {
     let card = knot.content.cloneNode(true)
@@ -29,26 +29,25 @@ function renderFutureCard(knot, data = {}) {
     itemWindSpeedKnot.textContent = data.wind_kph + " km/h"
     itemTimeKnot.textContent = data.time
 
-    futureHourSectionKnot.appendChild(card)
+    return card
 }
 
 function renderFutureHourSection(data) {
-    const arrHourData = data.forecast.forecastday[0].hour
+    const currentDay = data.forecast.forecastday[0].hour
+    const tomorrowsDay = data.forecast.forecastday[1].hour
+    let arrHourData = [...currentDay, ...tomorrowsDay]
+    const fragment = document.createDocumentFragment()
 
     const currentTime = new Date().getHours()
-    console.log(currentTime)
 
-    // const sliceHourData = arrHourData.slice(currentTime, currentTime + 4)
+    const sliceHourData = arrHourData.slice(currentTime + 1, currentTime + 5)
 
-    // arrHourData.forEach((item) => {
-    //     renderFutureCard(templateCardKnot, item)
-    // })
+    sliceHourData.forEach(item => {
+        const card = renderFutureCard(templateCardKnot, item)
+        fragment.appendChild(card)
+    });
 
-    const sliceHourData = arrHourData.slice(0, 4)
-
-    sliceHourData.forEach((item) => {
-        renderFutureCard(templateCardKnot, item)
-    })
+    futureHourSectionKnot.appendChild(fragment)
 }
 
 function renderCurrentCard(data) {
@@ -75,10 +74,14 @@ function render(data) {
 }
 
 async function fetchData(url) {
-    const response = await fetch(url)
-    const data = await response.json()
-    console.log(data)
-    render(data)
+    try {
+        const response = await fetch(url)
+        const data = await response.json()
+        console.log(data)
+        render(data)
+    } catch (error) {
+        console.error("Некая ошибка", error)
+    }
 }
 
 document.addEventListener("DOMContentLoaded", fetchData(urlAPI))
